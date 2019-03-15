@@ -124,7 +124,7 @@ func (l *LanguageProvider) GetTranslations(text, from, to string, maxTranslation
 	return xmlResult.Translations.TransMatch, nil
 }
 
-//Retrieves friendly names for the languages passed in as the parameter languageCodes, and localized using the passed locale language.
+//GetLanguageNames retrieves friendly names for the languages passed in as the parameter languageCodes, and localized using the passed locale language.
 func (l *LanguageProvider) GetLanguageNames(codes []string) ([]string, error) {
 	token := l.authenicator.GetToken()
 

@@ -26,13 +26,13 @@ func (c *Client) Translate(text, from, to string) (string, error) {
 	return c.translateProvider.Translate(text, from, to)
 }
 
-//The TransformText method is a text normalization function for social media, which returns a normalized form of the input.
+//method is a text normalization function for social media, which returns a normalized form of the input.
 //The method can be used as a preprocessing step in Machine Translation or other applications, which expect clean input text than is typically found in social media or user-generated content. The function currently works only with English input.
 func (c *Client) TransformText(lang, category, text string) (string, error) {
 	return c.translateProvider.TransformText(lang, category, text)
 }
 
-// Returns a wave or mp3 stream of the passed-in text being spoken in the desired language.
+// Speak returns a wave or mp3 stream of the passed-in text being spoken in the desired language.
 func (c *Client) Speak(text, lang, outFormat string) ([]byte, error) {
 	return c.translateProvider.Speak(text, lang, outFormat)
 }
@@ -47,12 +47,12 @@ func (c *Client) DetectArray(textArray []string) ([]string, error) {
 	return c.languageProvider.DetectArray(textArray)
 }
 
-//Retrieves an array of translations for a given language pair from the store and the MT engine. GetTranslations differs from Translate as it returns all available translations.
+//GetTranslations retrieves an array of translations for a given language pair from the store and the MT engine. GetTranslations differs from Translate as it returns all available translations.
 func (c *Client) GetTranslations(text, from, to string, maxTranslations int) ([]ResponseTranslationMatch, error) {
 	return c.languageProvider.GetTranslations(text, from, to, maxTranslations)
 }
 
-//Retrieves friendly names for the languages passed in as the parameter languageCodes, and localized using the passed locale language.
+//GetLanguageNames retrieves friendly names for the languages passed in as the parameter languageCodes, and localized using the passed locale language.
 func (c *Client) GetLanguageNames(codes []string) ([]string, error) {
 	return c.languageProvider.GetLanguageNames(codes)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetLanguagesForTranslate() ([]string, error) {
 	return c.languageProvider.GetLanguagesForTranslate()
 }
 
-//Retrieves the languages available for speech synthesis.
+//GetLanguagesForSpeak retrieves the languages available for speech synthesis.
 func (c *Client) GetLanguagesForSpeak() ([]string, error) {
 	return c.languageProvider.GetLanguagesForSpeak()
 }
